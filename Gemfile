@@ -7,8 +7,7 @@ gem 'rails', '3.2.12'
 gem 'thin', '~> 1.5'
 
 # Database
-group(:production) { gem 'pg', '~> 0.14' }
-group(:development, :test) { gem 'sqlite3', '~> 1.3' }
+gem 'sqlite3', '~> 1.3'
 
 # Controllers
 gem 'high_voltage', '~> 1.2'

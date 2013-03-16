@@ -16,3 +16,16 @@
 
 # Ignore idea
 .idea/
+
+# Ignore all coverage results.
+coverage
+
+# Ignore generated documentation.
+doc/
+.yardoc
+
+# Ignore precompiled assets.
+/public/assets
+
+# Ignore rvmrc's
+.rvmrc

@@ -1,3 +1,5 @@
+{<img src="https://gemnasium.com/rit-sse/rapdev13.png" alt="Dependency Status" />}[https://gemnasium.com/rit-sse/rapdev13]
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

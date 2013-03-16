@@ -3,9 +3,7 @@
 one:
   entry: MyString
   expected_output: MyString
-  language: 
 
 two:
   entry: MyString
   expected_output: MyString
-  language: 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Permalink:</b>
+  <%= @project.permalink %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%= @project.profile %>
+</p>
+
+<p>
+  <b>Is private:</b>
+  <%= @project.is_private %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

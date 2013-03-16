@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  permalink: MyString
+  profile: 
+  is_private: 
+
+two:
+  permalink: MyString
+  profile: 
+  is_private: 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @language.name %>
+</p>
+
+<p>
+  <b>Ace syntax:</b>
+  <%= @language.ace_syntax %>
+</p>
+
+<p>
+  <b>Pygments syntax:</b>
+  <%= @language.pygments_syntax %>
+</p>
+
+
+<%= link_to 'Edit', edit_language_path(@language) %> |
+<%= link_to 'Back', languages_path %>

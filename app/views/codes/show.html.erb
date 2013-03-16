@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Entry:</b>
+  <%= @code.entry %>
+</p>
+
+<p>
+  <b>Expected output:</b>
+  <%= @code.expected_output %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @code.language %>
+</p>
+
+
+<%= link_to 'Edit', edit_code_path(@code) %> |
+<%= link_to 'Back', codes_path %>

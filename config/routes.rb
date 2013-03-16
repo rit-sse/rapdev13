@@ -1,4 +1,24 @@
 RateMyCode::Application.routes.draw do
+  resources :languages
+
+
+  resources :organizations
+
+
+  resources :profiles
+
+
+  resources :codes
+
+
+  resources :projects
+
+
+  resources :submissions
+
+
+  devise_for :users
+
   resources :comments
 
   root :to => "comments#index"

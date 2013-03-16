@@ -24,12 +24,19 @@ class SubmissionsController < ApplicationController
   # GET /submissions/new
   # GET /submissions/new.json
   def new
-    @submission = Submission.new
-    @code = Code.new 
-    @all_languages = Language.all.map {|x| x.name}
-    respond_to do |format|
+    
+	@submission = Submission.new
+	@submission.code = Code.new
+	
+
+	# all the languages available
+	@all_languages = Language.all.map {|x| x.name}
+   
+      
+	respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @submission }
+      # we're aren't sending anything specific to the view right now 
+	  format.json 
     end
   end
 
@@ -42,7 +49,13 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(params[:submission])
-
+    @submission.code = Code.new
+    
+    # populate the submission.code field
+	@submission.code.submission = @submission
+    @submission.code.language = Language.filter_by_name( params[:code][:language] )
+		
+		    
     respond_to do |format|
       if @submission.save
         format.html { redirect_to @submission, notice: 'Submission was successfully created.' }

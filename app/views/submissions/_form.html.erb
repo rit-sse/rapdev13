@@ -11,7 +11,7 @@
     </div>
   <% end %>
    
-  <%= fields_for @code do |code_form| %>
+  <%= fields_for @submission.code do |code_form| %>
      <%= code_form.label :entry %><br />
      <%= code_form.text_area :entry %><br />
      

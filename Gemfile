@@ -14,6 +14,7 @@ gem 'sqlite3', '~> 1.3'
 gem 'high_voltage', '~> 1.2'
 gem 'gravatar-ultimate', '~> 1.0'
 gem 'pygments.rb', '~> 0.4'
+gem 'carrierwave'
 
 # Auth
 gem 'omniauth-github', '~> 1.1'

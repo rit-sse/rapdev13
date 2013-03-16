@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
+  <p>Enter your code below</p>
   <div class="field">
-    <%= f.label :entry %><br />
-    <%= f.text_field :entry %>
+    <%= f.text_area :entry %>
+  </div>
+  <p>Or upload a file</p>
+  <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
   </div>
   <div class="field">
     <%= f.label :expected_output %><br />
-    <%= f.text_field :expected_output %>
-  </div>
-  <div class="field">
-    <%= f.label :language %><br />
-    <%= f.text_field :language %>
+    <%= f.text_area :expected_output %>
   </div>
   <div class="actions">
     <%= f.submit %>

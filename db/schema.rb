@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315231531) do
+ActiveRecord::Schema.define(:version => 20130316203857) do
 
   create_table "codes", :force => true do |t|
     t.text     "entry"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130315231531) do
     t.integer  "submission_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "file"
   end
 
   add_index "codes", ["language_id"], :name => "index_codes_on_language_id"

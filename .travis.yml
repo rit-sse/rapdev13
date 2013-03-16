@@ -1,0 +1,10 @@
+language: ruby
+services: postgresql
+rvm:
+- "1.9.3"
+- rbx-19mode
+- "2.0.0"
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rake test

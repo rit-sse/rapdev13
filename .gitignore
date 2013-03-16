@@ -32,3 +32,6 @@ doc/
 
 # Ignore generated ERD file
 erd.pdf
+
+# Ignore uploaded code files
+/public/uploads

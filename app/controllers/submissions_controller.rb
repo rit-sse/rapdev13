@@ -25,7 +25,8 @@ class SubmissionsController < ApplicationController
   # GET /submissions/new.json
   def new
     @submission = Submission.new
-
+    @code = Code.new 
+    @all_languages = Language.all.map {|x| x.name}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @submission }
@@ -74,7 +75,7 @@ class SubmissionsController < ApplicationController
   def destroy
     @submission = Submission.find(params[:id])
     @submission.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to submissions_url }
       format.json { head :no_content }

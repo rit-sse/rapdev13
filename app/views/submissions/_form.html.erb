@@ -10,16 +10,18 @@
       </ul>
     </div>
   <% end %>
+   
+  <%= fields_for @code do |code_form| %>
+     <%= code_form.label :entry %><br />
+     <%= code_form.text_area :entry %><br />
+     
+     <%= code_form.label :language %><br />
+     <%= code_form.select :language, @all_languages   %><br />
+  <% end  %>
 
-  <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_field :code %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+   
 <% end %>

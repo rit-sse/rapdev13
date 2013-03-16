@@ -3,47 +3,50 @@ require 'test_helper'
 class ProjectsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)
+    @profile = Profile.create!
+    @project.profile = @profile
+    @project.save
   end
 
   test "should get index" do
-    get :index
+    get :index, profile_id: @profile
     assert_response :success
     assert_not_nil assigns(:projects)
   end
 
   test "should get new" do
-    get :new
+    get :new, profile_id: @profile
     assert_response :success
   end
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, project: { is_private: @project.is_private, permalink: @project.permalink }
+      post :create, profile_id: @profile, project: { is_private: @project.is_private, permalink: @project.permalink }
     end
 
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to profile_project_path(@profile, assigns(:project))
   end
 
   test "should show project" do
-    get :show, id: @project
+    get :show, profile_id: @profile, id: @project
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @project
+    get :edit, profile_id: @profile, id: @project
     assert_response :success
   end
 
   test "should update project" do
-    put :update, id: @project, project: { is_private: @project.is_private, permalink: @project.permalink }
-    assert_redirected_to project_path(assigns(:project))
+    put :update, profile_id: @profile, id: @project, project: { is_private: @project.is_private, permalink: @project.permalink }
+    assert_redirected_to profile_project_path(@profile,assigns(:project))
   end
 
   test "should destroy project" do
     assert_difference('Project.count', -1) do
-      delete :destroy, id: @project
+      delete :destroy, profile_id: @profile, id: @project
     end
 
-    assert_redirected_to projects_path
+    assert_redirected_to profile_projects_path @profile
   end
 end

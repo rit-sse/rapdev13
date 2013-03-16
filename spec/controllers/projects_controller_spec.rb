@@ -36,8 +36,9 @@ describe ProjectsController do
 
   describe "GET index" do
     it "assigns all projects as @projects" do
-      project = Project.create! valid_attributes
-      get :index, {}, valid_session
+      profile = Profile.new
+      project = profile.projects.create! valid_attributes
+      get :index, {profile:profile }, valid_session
       assigns(:projects).should eq([project])
     end
   end
@@ -74,7 +75,8 @@ describe ProjectsController do
       end
 
       it "assigns a newly created project as @project" do
-        post :create, {:project => valid_attributes}, valid_session
+        @profile = Profile.create
+        post :create, {profile: @profile, :project => valid_attributes}, valid_session
         assigns(:project).should be_a(Project)
         assigns(:project).should be_persisted
       end
@@ -115,8 +117,9 @@ describe ProjectsController do
       end
 
       it "assigns the requested project as @project" do
+        @profile = Profile.create
         project = Project.create! valid_attributes
-        put :update, {:id => project.to_param, :project => valid_attributes}, valid_session
+        put :update, {profile: @profile, :id => project.to_param, :project => valid_attributes}, valid_session
         assigns(:project).should eq(project)
       end
 

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "projects/index" do
   before(:each) do
+    assign(:profile, stub_model(Profile))
     assign(:projects, [
       stub_model(Project),
       stub_model(Project)

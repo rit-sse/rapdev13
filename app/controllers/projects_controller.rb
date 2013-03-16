@@ -2,8 +2,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
-
+    @profile = Profile.find(params[:profile_id])
+    @projects = @profile.projects
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @profile = Profile.find(params[:profile_id])
     @project = Project.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
+    @profile = Profile.find(params[:profile_id])
     @project = Project.new
 
     respond_to do |format|
@@ -34,6 +36,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @profile = Profile.find(params[:profile_id])
     @project = Project.find(params[:id])
   end
 

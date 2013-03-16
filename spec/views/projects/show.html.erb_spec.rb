@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "projects/show" do
   before(:each) do
+    @profile = assign(:profile, stub_model(Profile))
     @project = assign(:project, stub_model(Project))
   end
 

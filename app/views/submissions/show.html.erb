@@ -3,6 +3,15 @@
 
 
 
+
+<h1>
+<% if @submission.project %>
+There is a project
+<% else %>
+No Project
+<% end %>
+</h1>
+
 <% #if there is no submission.code, write an error %>
 <div class="code">
 <% if @submission.code and @submission.code.entry %>

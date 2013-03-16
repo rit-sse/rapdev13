@@ -13,7 +13,7 @@ gem 'sqlite3', '~> 1.3'
 # Controllers
 gem 'high_voltage', '~> 1.2'
 gem 'gravatar-ultimate', '~> 1.0'
-#gem 'pygments.rb', '~> 0.4', require: true
+gem 'pygments.rb', '~> 0.4', require: true
 
 # Auth
 gem 'omniauth-github', '~> 1.1'

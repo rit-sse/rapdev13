@@ -27,7 +27,7 @@ class SubmissionsController < ApplicationController
     
 	@submission = Submission.new
 	@submission.code = Code.new
-	
+   	
 
 	# all the languages available
 	@all_languages = Language.all.map {|x| x.name}
@@ -55,6 +55,8 @@ class SubmissionsController < ApplicationController
 	@submission.code.submission = @submission
     @submission.code.language = Language.find_by_name( params[:code][:language] )
     @submission.code.entry = params[:code][:entry]	
+	@submission.code.expected_output = params[:code][:expected_output]
+
 		    
     respond_to do |format|
       if @submission.save

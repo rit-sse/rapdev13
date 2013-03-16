@@ -1,4 +1,7 @@
 RateMyCode::Application.routes.draw do
+  resources :groups
+
+
   resources :languages
 
 

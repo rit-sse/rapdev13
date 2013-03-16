@@ -8,14 +8,11 @@ RateMyCode::Application.routes.draw do
   resources :organizations
 
 
-  resources :profiles
-
+  resources :profiles do
+    resources :projects
+  end
 
   resources :codes
-
-
-  resources :projects
-
 
   resources :submissions
 

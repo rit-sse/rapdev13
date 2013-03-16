@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: MyString
+  usefulness: 
+  inappropriate_flag: 
+
+two:
+  comment: MyString
+  usefulness: 
+  inappropriate_flag: 

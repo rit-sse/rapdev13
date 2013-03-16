@@ -39,7 +39,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '2.13'
 end
 
 group :development do

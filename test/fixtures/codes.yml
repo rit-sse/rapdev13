@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entry: MyString
+  expected_output: MyString
+
+two:
+  entry: MyString
+  expected_output: MyString

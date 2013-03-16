@@ -2,7 +2,11 @@
 
 <p>
   <b>Code:</b>
-  <%= @submission.code %>
+  <% if @submission.code and @submission.code.entry %>
+	  <%= @submission.code.entry %>
+  <% else %>
+	  No submission
+  <% end %>
 </p>
 
 <p>

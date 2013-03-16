@@ -53,8 +53,8 @@ class SubmissionsController < ApplicationController
     
     # populate the submission.code field
 	@submission.code.submission = @submission
-    @submission.code.language = Language.filter_by_name( params[:code][:language] )
-		
+    @submission.code.language = Language.find_by_name( params[:code][:language] )
+    @submission.code.entry = params[:code][:entry]	
 		    
     respond_to do |format|
       if @submission.save

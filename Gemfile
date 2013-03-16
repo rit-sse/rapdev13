@@ -46,6 +46,7 @@ group :development do
   gem 'binding_of_caller', '~> 0.6'
   gem 'better_errors', '~> 0.7'
   gem 'yard-activerecord', '~> 0.0.8'
+  gem "rails-erd"
 end
 
 group :test do

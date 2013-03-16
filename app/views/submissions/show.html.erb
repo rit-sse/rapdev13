@@ -3,7 +3,6 @@
 
 
 
-
 <% #if there is no submission.code, write an error %>
 <div class="code">
 <% if @submission.code and @submission.code.entry %>
@@ -33,8 +32,12 @@ No Expected Output
 
 
 <p>
-  <b>Rating:</b>
-  <%= @submission.rating %>
+<b>Rating:</b>
+<% if @submission.rating %>
+<%= @submission.rating %>
+<% else %>
+No Rating
+<% end %>
 </p>
 
 

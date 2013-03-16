@@ -1,17 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Code:</b>
-  <% if @submission.code and @submission.code.entry %>
-<pre>
 
+
+
+
+<% #if there is no submission.code, write an error %>
+<div class="code">
+<% if @submission.code and @submission.code.entry %>
+<pre>
 <%= @submission.code.entry %>
 </pre>
-
 <% else %>
-   Error, no code found
+Error, no code found
 <% end %>
-</p>
+</div>
+
+
+<div class="expected-output">
+<% if @submission.code.expected_output %>
+<pre>
+<%= @submission.code.expected_output %>
+</pre>
+<% else %>
+<div class="expected-output no-expected-output">
+No Expected Output
+</div>
+<% end %>
+</div>
+
+
+
+
 
 <p>
   <b>Rating:</b>

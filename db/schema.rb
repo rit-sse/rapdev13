@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315231531) do
+ActiveRecord::Schema.define(:version => 20130316202944) do
 
   create_table "codes", :force => true do |t|
     t.text     "entry"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20130315231531) do
     t.boolean  "is_private"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   add_index "projects", ["profile_id"], :name => "index_projects_on_profile_id"

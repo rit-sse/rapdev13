@@ -29,3 +29,6 @@ doc/
 
 # Ignore rvmrc's
 .rvmrc
+
+# Ignore generated ERD file
+erd.pdf

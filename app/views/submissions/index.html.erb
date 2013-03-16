@@ -15,8 +15,6 @@
   <tr>
     <td><%= submission.code %></td>
     <td><%= submission.rating %></td>
-    <td><%= submission.previous %></td>
-    <td><%= submission.next %></td>
     <td><%= link_to 'Show', submission %></td>
     <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
     <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>

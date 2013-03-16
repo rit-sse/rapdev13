@@ -4,7 +4,7 @@
 
 
 
-<h1>
+<h1 class="project-name">
 <% if @submission.project %>
 There is a project
 <% else %>
@@ -25,6 +25,7 @@ Error, no code found
 
 
 <div class="expected-output">
+<h3>Expected Output</h3>
 <% if @submission.code.expected_output %>
 <pre>
 <%= @submission.code.expected_output %>
@@ -50,5 +51,5 @@ No Rating
 </p>
 
 
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
+<% # link_to 'Edit', edit_submission_path(@submission) %> 
+<% # link_to 'Back', submissions_path %>

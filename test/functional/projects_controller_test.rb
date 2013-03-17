@@ -3,7 +3,7 @@ require 'test_helper'
 class ProjectsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)
-    @profile = Profile.create!
+    @profile = Profile.create!({name: "MyString"})
     @project.profile = @profile
     @project.save
   end
@@ -21,7 +21,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, profile_id: @profile, project: { is_private: @project.is_private, permalink: @project.permalink }
+      post :create, profile_id: @profile, project: { name: @project.name, is_private: @project.is_private, permalink: @project.permalink }
     end
 
     assert_redirected_to profile_project_path(@profile, assigns(:project))
@@ -38,7 +38,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should update project" do
-    put :update, profile_id: @profile, id: @project, project: { is_private: @project.is_private, permalink: @project.permalink }
+    put :update, profile_id: @profile, id: @project, project: { name: @project.name, is_private: @project.is_private, permalink: @project.permalink }
     assert_redirected_to profile_project_path(@profile,assigns(:project))
   end
 

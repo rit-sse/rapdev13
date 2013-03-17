@@ -3,6 +3,10 @@ require 'test_helper'
 class SubmissionsControllerTest < ActionController::TestCase
   setup do
     @submission = submissions(:one)
+    @code = codes(:one)
+    @submission.code = @code
+    @submission.save
+    @language = Language.create({name: "python"})
   end
 
   test "should get index" do
@@ -18,7 +22,7 @@ class SubmissionsControllerTest < ActionController::TestCase
 
   test "should create submission" do
     assert_difference('Submission.count') do
-      post :create, submission: { rating: @submission.rating }
+      post :create, submission: { rating: @submission.rating }, code: { language: "python", entry: @code.entry, expected_output: @code.expected_output}
     end
 
     assert_redirected_to submission_path(assigns(:submission))
